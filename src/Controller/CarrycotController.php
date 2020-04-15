@@ -32,32 +32,17 @@ class CarrycotController extends AbstractFOSRestController
             $newImageName = uniqid() . '-' . $originalImageName;
 
             $fileService->move($image, $this->getParameter('images_directory'), $newImageName);
-//            try {
-//                $image->move(
-//                    $this->getParameter('images_directory'),
-//                    $newImageName
-//                );
-//            } catch (FileException $exception) {
-//                return $exception;
-//            }
             $carrycot = new Carrycot();
             $data = [
                 'name' => $data->get('name'),
                 'description' => $data->get('description'),
                 'price' => $data->get('price'),
-                'imagePath' => $request->files->get('file')
+                'imagePath' => $newImageName
             ];
 
             $carrycotManager->saveCarrycot($carrycot, $data);
-//            $carrycot->setName($data->get('name'));
-//            $carrycot->setDescription($data->get('description'));
-//            $carrycot->setPrice($data->get('price'));
-//            $carrycot->setImagePath($request->files->get('file'));
-//
-//            $entityManager->persist($carrycot);
-//        $entityManager->flush();
         }
-        return $this->json($request->files->get('file')) ;
+        return $this->json($carrycot) ;
     }
 
     /**

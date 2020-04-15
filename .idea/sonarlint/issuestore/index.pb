@@ -15,3 +15,9 @@ M
 config/packages/fos_rest.yaml,8\5\85c65e27b3023dfaf8e16fb25dd1d1bf76f5a523
 U
 %src/Controller/CarrycotController.php,d\8\d879ea0c89d06bb803c11cd65994027cd3230fa9
+O
+src/Manager/AbstractManager.php,f\f\ff2ac239e890f5194d1c72224cb7ac291d4e9b89
+L
+src/Services/FileService.php,a\5\a5c8c7f22b4a03cac7461182ab2be658104e499e
+O
+src/Manager/CarrycotManager.php,4\6\464bd93b1338eb9f9662c361d324f6dc484ad685
